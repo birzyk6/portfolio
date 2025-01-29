@@ -1,4 +1,4 @@
-import { easeOut, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import TypeWrite from "./components/TypeWrite";
 import Line from "./components/utilcomps/Line";
