@@ -7,8 +7,6 @@ import MyWork from "./components/MyWork";
 function App() {
     const [activeSection, setActiveSection] = useState<string>("about");
 
-    const msg1 = "All of my work\nin one place!";
-
     // Text corresponding to each section
     const sectionTexts: Record<string, string> = {
         about: "Learn more about me and my journey.",
@@ -16,6 +14,14 @@ function App() {
         morestack: "Discover additional tools I work with.",
         education: "Check out my educational background.",
         workexperience: "Explore my work experience.",
+    };
+
+    const titleTexts: Record<string, string> = {
+        about: "All of my work\nin one place!",
+        stack: "What I use",
+        morestack: "I also use",
+        education: "Education",
+        workexperience: "Work\nExperience",
     };
 
     return (
@@ -54,7 +60,9 @@ function App() {
                         }}
                     >
                         <TypeWrite
-                            text={msg1}
+                            key={activeSection} // Forces remount on section change
+                            text={titleTexts[activeSection]}
+                            delayStart={0.1}
                             className="text-white p-10 pt-0 m-10 ml-5 xl:text-8xl lg:text-6xl tracking-wide leading-snug"
                         />
                         {/* Dynamic Section Text */}

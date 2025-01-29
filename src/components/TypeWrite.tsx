@@ -7,6 +7,7 @@ interface TypeWriteProps {
     className?: string;
     style?: React.CSSProperties;
     delay?: number;
+    delayStart?: number;
     speed?: number;
 }
 
@@ -15,12 +16,13 @@ const TypeWrite: React.FC<TypeWriteProps> = ({
     className,
     style,
     delay,
+    delayStart = 0.5,
     speed,
 }) => {
     const containerVariants = {
         visible: {
             transition: {
-                delayChildren: 0.5 + (delay ?? 0), // Delay the animation of children by 0.5 seconds
+                delayChildren: delayStart + (delay ?? 0), // Delay the animation of children by 0.5 seconds
                 staggerChildren: speed ?? 0.035, // Stagger the animation of children by 0.035 seconds
             },
         },
