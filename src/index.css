@@ -33,12 +33,10 @@ pre {
     @apply bg-gray-700/20 border border-gray-600 rounded-2xl shadow ml-1;
 }
 
+/* local scrollbar */
+
 .scrollbar::-webkit-scrollbar {
     width: 0.5rem;
-}
-
-.scrollbar::-webkit-scrollbar-track-piece {
-    height: 10rem;
 }
 
 .scrollbar::-webkit-scrollbar-track {
@@ -54,5 +52,24 @@ pre {
 
 /* Optional: Add hover effects for the thumb */
 .scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply opacity-50;
+}
+
+/* */
+
+.scrollbarglobal::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+.scrollbarglobal::-webkit-scrollbar-track {
+    @apply bg-gray-600/20;
+}
+
+.scrollbarglobal::-webkit-scrollbar-thumb {
+    @apply bg-white/10;
+}
+
+/* Optional: Add hover effects for the thumb */
+.scrollbarglobal::-webkit-scrollbar-thumb:hover {
     @apply opacity-50;
 }
